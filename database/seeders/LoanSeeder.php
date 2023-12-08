@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Loan;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -13,19 +14,7 @@ class LoanSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('loans')->insert([
-            'user_id' => 1,
-            'loan_at' => now(),
-            'return_at' => now(),
-            'created_at' => now(),
-        ]);
-        DB::table('loans')->insert([
-            'user_id' => 2,
-            'loan_at' => now(),
-            'return_at' => now(),
-            'created_at' => now(),
-        ]);
-        DB::table('loans')->insert([
+        Loan::insert([
             'user_id' => 3,
             'loan_at' => now(),
             'return_at' => now(),

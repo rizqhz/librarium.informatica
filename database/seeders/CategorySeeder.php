@@ -14,14 +14,22 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categories')->insert([
-            'category' => 'Kategori Buku A'
-        ]);
-        DB::table('categories')->insert([
-            'category' => 'Kategori Buku B'
-        ]);
-        DB::table('categories')->insert([
-            'category' => 'Kategori Buku C'
+        Category::insert([
+            [
+                'category' => 'Komedi'
+            ],
+            [
+                'category' => 'Romansa'
+            ],
+            [
+                'category' => 'Fantasi'
+            ],
+            [
+                'category' => 'Aksi'
+            ],
+            [
+                'category' => 'Motivasi'
+            ],
         ]);
     }
 }
