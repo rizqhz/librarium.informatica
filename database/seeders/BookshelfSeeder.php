@@ -22,12 +22,12 @@ class BookshelfSeeder extends Seeder
             ],
             [
                 'code' => 'B002',
-                'name' => 'Rak Buku A',
+                'name' => 'Rak Buku B',
                 'created_at' => now(),
             ],
             [
                 'code' => 'B003',
-                'name' => 'Rak Buku A',
+                'name' => 'Rak Buku C',
                 'created_at' => now(),
             ]
         ]);
