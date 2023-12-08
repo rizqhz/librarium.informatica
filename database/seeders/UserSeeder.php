@@ -15,31 +15,34 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::insert([
-            [
-                'username' => 'administrator',
-                'name' => 'Administrator',
-                'email' => 'admin@gmail.com',
-                'email_verified_at' => now(),
-                'password' => Hash::make('password'),
-                'created_at' => now(),
-            ],
-            [
-                'username' => 'pustakawan',
-                'name' => 'Pustakawan',
-                'email' => 'pustakawan@gmail.com',
-                'email_verified_at' => now(),
-                'password' => Hash::make('password'),
-                'created_at' => now(),
-            ],
-            [
-                'username' => 'anggota',
-                'name' => 'Anggota',
-                'email' => 'anggota@gmail.com',
-                'email_verified_at' => now(),
-                'password' => Hash::make('password'),
-                'created_at' => now(),
-            ],
+        $user = User::create([
+            'username' => 'administrator',
+            'name' => 'Administrator',
+            'email' => 'admin@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+            'created_at' => now(),
         ]);
+        $user->assignRole('admin');
+
+        $user = User::create([
+            'username' => 'pustakawan',
+            'name' => 'Pustakawan',
+            'email' => 'pustakawan@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+            'created_at' => now(),
+        ]);
+        $user->assignRole('pustakawan');
+
+        $user = User::create([
+            'username' => 'anggota',
+            'name' => 'Anggota',
+            'email' => 'anggota@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+            'created_at' => now(),
+        ]);
+        $user->assignRole('anggota');
     }
 }
