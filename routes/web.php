@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,5 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/books/export', [BookController::class, 'export'])->name('book.export');
     Route::post('/books/import', [BookController::class, 'import'])->name('book.import');
 });
+
+Route::get('/mail', [LecturerController::class, 'testMail'])->name('test.mail');
 
 require __DIR__.'/auth.php';
